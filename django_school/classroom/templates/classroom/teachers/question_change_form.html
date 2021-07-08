@@ -5,7 +5,7 @@
 {% block content %}
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'teachers:quiz_change_list' %}">My Quizzes</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'teachers:quiz_change_list' %}">Mis evaluaciones</a></li>
       <li class="breadcrumb-item"><a href="{% url 'teachers:quiz_change' quiz.pk %}">{{ quiz.name }}</a></li>
       <li class="breadcrumb-item active" aria-current="page">{{ question.text }}</li>
     </ol>
@@ -15,17 +15,17 @@
     {% csrf_token %}
     {{ formset.management_form }}
     {{ form|crispy }}
-    <div class="card mb-3{% if formset.errors %} border-danger{% endif %}">
+    <div class=" mb-3{% if formset.errors %} border-danger{% endif %}">
       <div class="card-header">
         <div class="row">
           <div class="col-8">
-            <strong>Answers</strong>
+            <strong>Respuestas</strong>
           </div>
           <div class="col-2">
-            <strong>Correct?</strong>
+            <strong></strong>
           </div>
           <div class="col-2">
-            <strong>Delete?</strong>
+            <strong></strong>
           </div>
         </div>
       </div>

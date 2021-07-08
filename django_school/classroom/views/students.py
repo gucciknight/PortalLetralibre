@@ -10,7 +10,7 @@ from django.views.generic import CreateView, ListView, UpdateView
 
 from ..decorators import student_required
 from ..forms import StudentInterestsForm, StudentSignUpForm, TakeQuizForm
-from ..models import Quiz, Student, TakenQuiz, User
+from ..models import Quiz, Student, StudentAnswer, TakenQuiz, User
 
 
 class StudentSignUpView(CreateView):
@@ -42,6 +42,14 @@ class StudentInterestsView(UpdateView):
         messages.success(self.request, 'Interests updated with success!')
         return super().form_valid(form)
 
+@method_decorator([login_required, student_required], name='dispatch')
+class UserListView(ListView):
+    model = Student
+    context_object_name = 'info'
+    template_name = 'classroom/students/lista_de_datos.html'
+
+    def get_name(self):
+        student = self.request.user.st
 
 @method_decorator([login_required, student_required], name='dispatch')
 class QuizListView(ListView):

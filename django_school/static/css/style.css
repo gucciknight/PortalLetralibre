@@ -1,0 +1,128 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.dashboard .btn-warning {
+  text-align: start;
+  background-color: orange;
+  color: white;
+  width: 70%;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.dashboard .btn-warning:hover, .dashboard .btn-warning:focus, .dashboard .btn-warning:active, .dashboard .btn-warning.active, .dashboard .open .dropdown-toggle.btn-warning {
+  background-color: blue;
+  color: #FFF;
+  border-color: blue;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.dashboard .sideContainer {
+  padding-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+  border-right: solid 1px orange;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard .sideContainer .logo {
+  margin-bottom: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 40%;
+}
+
+.dashboard .sideContainer .sideButtons {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  text-align: center;
+}
+
+.dashboard .mainContainer {
+  margin-top: 50px;
+}
+
+.dashboard .mainContainer .textoCentro {
+  margin-top: 15px;
+  position: relative;
+  left: 110px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.dashboard .mainContainer .textoCentro p {
+  color: blue;
+}
+
+.dashboard .mainContainer .userSection {
+  margin-top: 50px;
+  height: 480px;
+  width: 95%;
+  border: solid 2px orange;
+  border-radius: 15px;
+}
+
+.dashboard .mainContainer .userSection img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 150px;
+}
+
+.dashboard .mainContainer .userSection p {
+  color: orange;
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.footer {
+  background: white;
+  color: orange;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding-top:50px; 
+}
+
+.footer .logos {
+  height: 50px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.footer .links a {
+  text-decoration: none;
+  color: orange;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.footer .links a:hover {
+  text-decoration: none;
+  color: #206dca;
+}
+
+.container .userdata {
+  position: relative;
+  top: 40%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 25vh;
+  height: 25vh;
+}
+/*# sourceMappingURL=style.css.map */

@@ -3,19 +3,19 @@
 {% block content %}
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">My Quizzes</li>
+      <li class="breadcrumb-item active" aria-current="page">Mis evaluacionmes</li>
     </ol>
   </nav>
-  <h2 class="mb-3">My Quizzes</h2>
-  <a href="{% url 'teachers:quiz_add' %}" class="btn btn-primary mb-3" role="button">Add quiz</a>
-  <div class="card">
+  <h2 class="mb-3"></h2>
+  <a href="{% url 'teachers:quiz_add' %}" class="btn btn-primary mb-3" role="button">Agregar evalucación</a>
+  <div class="">
     <table class="table mb-0">
       <thead>
         <tr>
           <th>Quiz</th>
-          <th>Subject</th>
-          <th>Questions</th>
-          <th>Taken</th>
+          <th></th>
+          <th>Preguntas</th>
+          <th>Tomada</th>
           <th></th>
         </tr>
       </thead>
@@ -27,12 +27,12 @@
             <td class="align-middle">{{ quiz.questions_count }}</td>
             <td class="align-middle">{{ quiz.taken_count }}</td>
             <td class="text-right">
-              <a href="{% url 'teachers:quiz_results' quiz.pk %}" class="btn btn-primary">View results</a>
+              <a href="{% url 'teachers:quiz_results' quiz.pk %}" class="btn btn-primary">Ver resultados</a>
             </td>
           </tr>
         {% empty %}
           <tr>
-            <td class="bg-light text-center font-italic" colspan="5">You haven't created any quiz yet.</td>
+            <td class="bg-light text-center font-italic" colspan="5">No haz creado ninguna evaluación</td>
           </tr>
         {% endfor %}
       </tbody>

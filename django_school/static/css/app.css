@@ -40,8 +40,8 @@ footer a {
 .btn-student:hover,
 .btn-student:active {
   color: #fff;
-  background-color: #608993;
-  border-color: #608993;
+  background-color: #fff;
+  border-color: #fff;
 }
 
 .btn-teacher {
