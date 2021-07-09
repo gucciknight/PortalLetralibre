@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
                 ('is_staff', models.BooleanField(default=False, help_text='Designates whether the user can log into this admin site.', verbose_name='staff status')),
                 ('is_active', models.BooleanField(default=True, help_text='Designates whether this user should be treated as active. Unselect this instead of deleting accounts.', verbose_name='active')),
                 ('date_joined', models.DateTimeField(default=django.utils.timezone.now, verbose_name='date joined')),
-                ('is_student', models.BooleanField(default=False)),
+                ('is_tutor', models.BooleanField(default=False)),
                 ('is_teacher', models.BooleanField(default=False)),
                 ('groups', models.ManyToManyField(blank=True, help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.', related_name='user_set', related_query_name='user', to='auth.Group', verbose_name='groups')),
                 ('user_permissions', models.ManyToManyField(blank=True, help_text='Specific permissions for this user.', related_name='user_set', related_query_name='user', to='auth.Permission', verbose_name='user permissions')),
@@ -54,10 +54,10 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='Student',
+            name='Tutor',
             fields=[
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, primary_key=True, serialize=False, to=settings.AUTH_USER_MODEL)),
-                ('interests', models.ManyToManyField(related_name='interested_students', to='classroom.Subject')),
+                ('interests', models.ManyToManyField(related_name='interested_tutors', to='classroom.Subject')),
             ],
         ),
         migrations.CreateModel(
@@ -93,19 +93,19 @@ class Migration(migrations.Migration):
                 ('score', models.FloatField()),
                 ('date', models.DateTimeField(auto_now_add=True)),
                 ('quiz', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='taken_quizzes', to='classroom.Quiz')),
-                ('student', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='taken_quizzes', to='classroom.Student')),
+                ('tutor', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='taken_quizzes', to='classroom.Tutor')),
             ],
         ),
         migrations.CreateModel(
-            name='StudentAnswer',
+            name='TutorAnswer',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('answer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='+', to='classroom.Answer')),
-                ('student', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='quiz_answers', to='classroom.Student')),
+                ('tutor', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='quiz_answers', to='classroom.Tutor')),
             ],
         ),
         migrations.AddField(
-            model_name='student',
+            model_name='tutor',
             name='quizzes',
             field=models.ManyToManyField(through='classroom.TakenQuiz', to='classroom.Quiz'),
         ),

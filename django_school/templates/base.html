@@ -35,12 +35,12 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{% static 'css/students.css' %}"
+      href="{% static 'css/tutors.css' %}"
     />
     {% endif %}
   </head>
   <body>
-    {% if user.is_authenticated %} {% if user.is_student %}
+    {% if user.is_authenticated %} {% if user.is_tutor %}
     <div class="dashboard">
       <div class="row">
         <div class="col-3">
@@ -51,7 +51,7 @@
               class="logo"
             />
             <div class="sideButtons m-2">
-              <a href="/students/miperfil"
+              <a href="/tutors/miperfil"
                 ><button type="button" class="btn btn-warning my-2">
                   MI PERFIL</button
                 ><br
@@ -68,7 +68,7 @@
               <button type="button" class="btn btn-warning my-2">
                 CÁPSULA</button
               ><br />
-              <a href="/students/taken">
+              <a href="/tutors/taken">
               <button type="button" class="btn btn-warning my-2">
                 EVALUACIONES</button
               ><br 
@@ -121,7 +121,7 @@
               class="logo"
             />
             <div class="sideButtons m-2">
-              <a href="/students/miperfil"
+              <a href="/tutors/miperfil"
                 ><button type="button" class="btn btn-warning my-2">
                   MI PERFIL</button
                 ><br
@@ -138,7 +138,7 @@
               <button type="button" class="btn btn-warning my-2">
                 REPORTE SEMANAL</button
               ><br />
-              <a href="/students/taken">
+              <a href="/tutors/taken">
               <button type="button" class="btn btn-warning my-2">
                 EVALUACIONES</button
               ><br 

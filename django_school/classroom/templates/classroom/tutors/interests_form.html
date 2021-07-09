@@ -8,6 +8,6 @@
     {% csrf_token %}
     {{ form|crispy }}
     <button type="submit" class="btn btn-success">Guardar cambios</button>
-    <a href="{% url 'students:quiz_list' %}" class="btn btn-outline-secondary">Cancelar</a>
+    <a href="{% url 'tutors:quiz_list' %}" class="btn btn-outline-secondary">Cancelar</a>
   </form>
 {% endblock %}

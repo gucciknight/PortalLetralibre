@@ -4,7 +4,7 @@ from django.utils.html import escape, mark_safe
 
 
 class User(AbstractUser):
-    is_student = models.BooleanField(default=False)
+    is_tutor = models.BooleanField(default=False)
     is_teacher = models.BooleanField(default=False)
 
 
@@ -42,16 +42,16 @@ class Question(models.Model):
 class Answer(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answers')
     text = models.CharField('Answer', max_length=255)
-    is_correct = models.BooleanField('Correct answer', default=False)
+    #is_correct = models.BooleanField('Correct answer', default=False)
 
     def __str__(self):
         return self.text
 
 
-class Student(models.Model):
+class Tutor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     quizzes = models.ManyToManyField(Quiz, through='TakenQuiz')
-    interests = models.ManyToManyField(Subject, related_name='interested_students')
+    interests = models.ManyToManyField(Subject, related_name='interested_tutors')
 
     def get_unanswered_questions(self, quiz):
         answered_questions = self.quiz_answers \
@@ -65,12 +65,13 @@ class Student(models.Model):
 
 
 class TakenQuiz(models.Model):
-    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='taken_quizzes')
+    tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE, related_name='taken_quizzes')
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name='taken_quizzes')
-    score = models.FloatField()
+    #score = models.FloatField()
     date = models.DateTimeField(auto_now_add=True)
 
 
-class StudentAnswer(models.Model):
-    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='quiz_answers')
+class TutorAnswer(models.Model):
+    tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE, related_name='quiz_answers')
     answer = models.ForeignKey(Answer, on_delete=models.CASCADE, related_name='+')
+

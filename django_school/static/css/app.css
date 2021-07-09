@@ -31,14 +31,14 @@ footer a {
   border-radius: .2rem;
 }
 
-.btn-student {
+.btn-tutor {
   color: #fff;
   background-color: #91afb6;
   border-color: #91afb6;
 }
 
-.btn-student:hover,
-.btn-student:active {
+.btn-tutor:hover,
+.btn-tutor:active {
   color: #fff;
   background-color: #fff;
   border-color: #fff;
