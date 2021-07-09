@@ -44,14 +44,14 @@ footer a {
   border-color: #fff;
 }
 
-.btn-teacher {
+.btn-coordinator {
   color: #fff;
   background-color: #8980a5;
   border-color: #8980a5;
 }
 
-.btn-teacher:hover,
-.btn-teacher:active {
+.btn-coordinator:hover,
+.btn-coordinator:active {
   color: #fff;
   background-color: #66598B;
   border-color: #66598B;

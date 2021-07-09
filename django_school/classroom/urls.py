@@ -1,6 +1,6 @@
 from django.urls import include, path
 
-from .views import classroom, tutors, teachers
+from .views import classroom, tutors, coordinators
 
 urlpatterns = [
     path('', classroom.home, name='home'),
@@ -13,14 +13,14 @@ urlpatterns = [
         path('miperfil/', tutors.UserListView.as_view(), name='lista_de_datos'),
     ], 'classroom'), namespace='tutors')),
 
-    path('teachers/', include(([
-        path('', teachers.QuizListView.as_view(), name='quiz_change_list'),
-        path('quiz/add/', teachers.QuizCreateView.as_view(), name='quiz_add'),
-        path('quiz/<int:pk>/', teachers.QuizUpdateView.as_view(), name='quiz_change'),
-        path('quiz/<int:pk>/delete/', teachers.QuizDeleteView.as_view(), name='quiz_delete'),
-        path('quiz/<int:pk>/results/', teachers.QuizResultsView.as_view(), name='quiz_results'),
-        path('quiz/<int:pk>/question/add/', teachers.question_add, name='question_add'),
-        path('quiz/<int:quiz_pk>/question/<int:question_pk>/', teachers.question_change, name='question_change'),
-        path('quiz/<int:quiz_pk>/question/<int:question_pk>/delete/', teachers.QuestionDeleteView.as_view(), name='question_delete'),
-    ], 'classroom'), namespace='teachers')),
+    path('coordinators/', include(([
+        path('', coordinators.QuizListView.as_view(), name='quiz_change_list'),
+        path('quiz/add/', coordinators.QuizCreateView.as_view(), name='quiz_add'),
+        path('quiz/<int:pk>/', coordinators.QuizUpdateView.as_view(), name='quiz_change'),
+        path('quiz/<int:pk>/delete/', coordinators.QuizDeleteView.as_view(), name='quiz_delete'),
+        path('quiz/<int:pk>/results/', coordinators.QuizResultsView.as_view(), name='quiz_results'),
+        path('quiz/<int:pk>/question/add/', coordinators.question_add, name='question_add'),
+        path('quiz/<int:quiz_pk>/question/<int:question_pk>/', coordinators.question_change, name='question_change'),
+        path('quiz/<int:quiz_pk>/question/<int:question_pk>/delete/', coordinators.QuestionDeleteView.as_view(), name='question_delete'),
+    ], 'classroom'), namespace='coordinators')),
 ]

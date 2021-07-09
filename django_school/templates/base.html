@@ -25,11 +25,11 @@
     />
     <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}" />
     <link rel="stylesheet" href="/static/css/style.css" />
-    {% if user.is_authenticated and user.is_teacher %}
+    {% if user.is_authenticated and user.is_coordinator %}
     <link
       rel="stylesheet"
       type="text/css"
-      href="{% static 'css/teachers.css' %}"
+      href="{% static 'css/coordinators.css' %}"
     />
     {% else %}
     <link
